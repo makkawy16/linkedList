@@ -15,10 +15,6 @@ public class Main {
         linkedList.printList();
 
 
-        //  System.out.println("last item : " + linkedList.getLastitem());
-        //  System.out.println("before last :" + linkedList.beforeLast());
-        // System.out.println("length : " + linkedList.getLength());
-
 
         linkedList.removeLast();
         System.out.println("after remove");
@@ -77,5 +73,8 @@ public class Main {
         System.out.println("remove item");
         linkedList.remove(0);
 
+        //reverse the list
+        System.out.println("\n reverse the list");
+        linkedList.reverse();
     }
 }

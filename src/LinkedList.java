@@ -147,7 +147,7 @@ public class LinkedList {
         else if (index == length) append(value);
         else {
             Node newNode = new Node(value);
-            Node temp = get(index-1);
+            Node temp = get(index - 1);
             newNode.next = temp.next;
             temp.next = newNode;
             length++;
@@ -156,12 +156,12 @@ public class LinkedList {
     }
 
     //remove node
-    public void remove(int index){
-        if (index<0 || index>=length) System.out.println("Out Of Range");
-        else if(index == 0) removeFirstNode();
-        else if(index == length-1) removeLast();
-        else{
-           Node prev = get(index-1);
+    public void remove(int index) {
+        if (index < 0 || index >= length) System.out.println("Out Of Range");
+        else if (index == 0) removeFirstNode();
+        else if (index == length - 1) removeLast();
+        else {
+            Node prev = get(index - 1);
             Node temp = prev.next;
             prev.next = temp.next;
             temp.next = null;
@@ -169,6 +169,24 @@ public class LinkedList {
             printList();
 
         }
+    }
+
+    //reverse
+    public void reverse() {
+        Node temp = head;
+        head = tail;
+        tail = temp;
+
+        Node after = temp.next;
+        Node before = null;
+        for (int i = 0; i < length; i++) {
+            after = temp.next;
+            temp.next = before;
+            before = temp;
+            temp = after;
+
+        }
+        printList();
     }
 
     public int getBeforeLastItem() {
