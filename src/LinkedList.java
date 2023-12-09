@@ -1,14 +1,17 @@
 public class LinkedList {
     private Node head;
     private Node tail;
+    private Node prev;
     private int length;
+    private Node lastitem;
 
     public LinkedList(int value) {
         Node newNode = new Node(value);
         head = newNode;
         tail = newNode;
-        length=1;
+        length = 1;
     }
+
     public int getHead() {
         return head.value;
     }
@@ -29,21 +32,44 @@ public class LinkedList {
         }
     }
 
-    public void append(int value){
+    public void append(int value) {
         Node newNode = new Node(value);
 
-        if(length ==0){
+        if (length == 0) {
             head = newNode;
             tail = newNode;
-        }else{
+            lastitem = newNode;
+        } else {
+            prev = tail;
             tail.next = newNode; // el sahm aly byshawer 3la el new node
             tail = newNode; // tail ra7 3la al new node
+            lastitem = newNode;
         }
         length++;
     }
-    class Node{
+
+    public void removeLast() {
+        if (length == 0) System.out.println("list is null");
+        else {
+            tail = prev;
+            tail.next = null;
+            length--;
+
+        }
+    }
+
+    public int beforeLast() {
+        return prev.value;
+    }
+
+    public int getLastitem() {
+        return lastitem.value;
+    }
+
+    class Node {
         int value;
         Node next;
+
 
         public Node(int value) {
             this.value = value;

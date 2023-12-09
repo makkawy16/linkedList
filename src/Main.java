@@ -8,9 +8,23 @@ public class Main {
 
         linkedList.printList();*/
 
-        LinkedList linkedList =new LinkedList(2);
+
+        LinkedList linkedList = new LinkedList(2);
         linkedList.append(3);
+        linkedList.append(4);
         linkedList.printList();
+
+
+      //  System.out.println("last item : " + linkedList.getLastitem());
+      //  System.out.println("before last :" + linkedList.beforeLast());
+       // System.out.println("length : " + linkedList.getLength());
+
+
+        linkedList.removeLast();
+        System.out.println("after remove");
+        linkedList.printList();
+       // System.out.println("length : " + linkedList.getLength());
+
 
     }
 }
