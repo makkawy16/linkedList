@@ -10,8 +10,8 @@ public class Main {
 
 
         LinkedList linkedList = new LinkedList(2);
-        linkedList.append(3);
-        linkedList.append(4);
+       // linkedList.append(3);
+       // linkedList.append(4);
         linkedList.printList();
 
 

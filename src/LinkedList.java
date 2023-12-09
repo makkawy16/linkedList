@@ -39,6 +39,7 @@ public class LinkedList {
             head = newNode;
             tail = newNode;
             lastitem = newNode;
+            prev = newNode;
         } else {
             prev = tail;
             tail.next = newNode; // el sahm aly byshawer 3la el new node
@@ -51,9 +52,17 @@ public class LinkedList {
     public void removeLast() {
         if (length == 0) System.out.println("list is null");
         else {
-            tail = prev;
-            tail.next = null;
-            length--;
+
+            if(tail != head){
+                tail = prev;
+                tail.next = null;
+                length--;
+            }else{
+                tail =null;
+                head = null;
+                length =0;
+                System.out.println("list is now empty");
+            }
 
         }
     }
