@@ -10,20 +10,20 @@ public class Main {
 
 
         LinkedList linkedList = new LinkedList(2);
-       // linkedList.append(3);
-       // linkedList.append(4);
+        // linkedList.append(3);
+        // linkedList.append(4);
         linkedList.printList();
 
 
-      //  System.out.println("last item : " + linkedList.getLastitem());
-      //  System.out.println("before last :" + linkedList.beforeLast());
-       // System.out.println("length : " + linkedList.getLength());
+        //  System.out.println("last item : " + linkedList.getLastitem());
+        //  System.out.println("before last :" + linkedList.beforeLast());
+        // System.out.println("length : " + linkedList.getLength());
 
 
         linkedList.removeLast();
         System.out.println("after remove");
         linkedList.printList();
-       // System.out.println("length : " + linkedList.getLength());
+        // System.out.println("length : " + linkedList.getLength());
 
 
         //add item in empty list
@@ -43,6 +43,17 @@ public class Main {
         System.out.println("remove first node again");
         linkedList.removeFirstNode();
         linkedList.printList();
+
+        linkedList.append(3);
+        linkedList.append(4);
+        linkedList.printList();
+        System.out.println("node by index");
+
+        try {
+            System.out.println(linkedList.get(1).value);
+        }catch (Exception e){
+            System.out.println(e.getLocalizedMessage() );
+        }
 
     }
 }

@@ -104,6 +104,29 @@ public class LinkedList {
         }
     }
 
+    //get node by index
+    public Node get(int index){
+        if (length == 0 || index < 0 || index > length) return null;
+        Node temp = head;
+        for (int i =0 ; i <index;i++)
+            temp = temp.next;
+        return temp;
+
+
+        //another way but longer
+        /*else if (index == 0)
+            return head;
+        else if (index == length-1)
+            return tail;
+        else {
+            while (index < length){
+                 temp = head.next;
+                index ++;
+            }
+            return temp;
+        }*/
+    }
+
     public int getBeforeLastItem() {
         return prev.value;
     }
