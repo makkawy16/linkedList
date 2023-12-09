@@ -30,10 +30,18 @@ public class Main {
         linkedList.prepend(5);
         linkedList.printList();
 
-        System.out.println();
+        System.out.println("add node in the first");
 
         //add item in the first
         linkedList.prepend(6);
+        linkedList.printList();
+
+        System.out.println("remove first node");
+        linkedList.removeFirstNode();
+        linkedList.printList();
+
+        System.out.println("remove first node again");
+        linkedList.removeFirstNode();
         linkedList.printList();
 
     }

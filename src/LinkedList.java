@@ -64,6 +64,27 @@ public class LinkedList {
 
     }
 
+    //remove first node
+    public void removeFirstNode(){
+        if(length == 0) System.out.println("list is empty");
+        /*else if(length == 1) {
+            head = null;
+            tail = null;
+            length =0;
+            System.out.println("list now is empty");
+        }*/
+        else{
+            Node temp = head;
+            head = head.next;
+            temp = null;
+            length--;
+            if (length == 0) {
+                tail = null;
+                System.out.println("list now is empty");
+            }
+        }
+    }
+
     //remove last node
     public void removeLast() {
         if (length == 0) System.out.println("list is null");
