@@ -3,7 +3,7 @@ public class LinkedList {
     private Node tail;
     private Node prev;
     private int length;
-    private Node lastitem;
+    private Node lastItem;
 
     public LinkedList(int value) {
         Node newNode = new Node(value);
@@ -32,47 +32,63 @@ public class LinkedList {
         }
     }
 
+    //add new node in the end
     public void append(int value) {
         Node newNode = new Node(value);
 
         if (length == 0) {
             head = newNode;
             tail = newNode;
-            lastitem = newNode;
+            lastItem = newNode;
             prev = newNode;
         } else {
             prev = tail;
             tail.next = newNode; // el sahm aly byshawer 3la el new node
             tail = newNode; // tail ra7 3la al new node
-            lastitem = newNode;
+            lastItem = newNode;
         }
         length++;
     }
 
+    //add new node as first node
+    public void prepend(int value) {
+        Node newNode = new Node(value);
+        if (length == 0) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            newNode.next = head;
+            head = newNode;
+        }
+        length++;
+
+    }
+
+    //remove last node
     public void removeLast() {
         if (length == 0) System.out.println("list is null");
         else {
 
-            if(tail != head){
+            if (tail != head) {
                 tail = prev;
                 tail.next = null;
                 length--;
-            }else{
-                tail =null;
+            } else {
+                tail = null;
                 head = null;
-                length =0;
+                length = 0;
                 System.out.println("list is now empty");
             }
 
         }
     }
 
-    public int beforeLast() {
+    public int getBeforeLastItem() {
         return prev.value;
     }
 
-    public int getLastitem() {
-        return lastitem.value;
+    public int getLastItem() {
+        return lastItem.value;
     }
 
     class Node {

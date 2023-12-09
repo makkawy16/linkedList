@@ -26,5 +26,15 @@ public class Main {
        // System.out.println("length : " + linkedList.getLength());
 
 
+        //add item in empty list
+        linkedList.prepend(5);
+        linkedList.printList();
+
+        System.out.println();
+
+        //add item in the first
+        linkedList.prepend(6);
+        linkedList.printList();
+
     }
 }
