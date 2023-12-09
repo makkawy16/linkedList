@@ -53,20 +53,29 @@ public class Main {
         //get item using index
         try {
             System.out.println(linkedList.get(1).value);
-        }catch (Exception e){
-            System.out.println(e.getLocalizedMessage() );
+        } catch (Exception e) {
+            System.out.println(e.getLocalizedMessage());
         }
 
         // change value of a node using index
-        linkedList.set(0,3);
+        linkedList.set(0, 3);
         linkedList.append(6);
         linkedList.append(7);
 
         System.out.println("the list : ");
         linkedList.printList();
 
+        //insert new node
         System.out.println("insert new node");
-        linkedList.insert(3,8);
+        linkedList.insert(4,8);
+        System.out.println();
+        System.out.println();
+
+
+        //remove node
+        linkedList.printList();
+        System.out.println("remove item");
+        linkedList.remove(0);
 
     }
 }

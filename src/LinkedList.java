@@ -78,6 +78,7 @@ public class LinkedList {
             head = head.next;
             temp = null;
             length--;
+            printList();
             if (length == 0) {
                 tail = null;
                 System.out.println("list now is empty");
@@ -94,6 +95,7 @@ public class LinkedList {
                 tail = prev;
                 tail.next = null;
                 length--;
+                printList();
             } else {
                 tail = null;
                 head = null;
@@ -151,6 +153,22 @@ public class LinkedList {
             length++;
         }
         printList();
+    }
+
+    //remove node
+    public void remove(int index){
+        if (index<0 || index>=length) System.out.println("Out Of Range");
+        else if(index == 0) removeFirstNode();
+        else if(index == length-1) removeLast();
+        else{
+           Node prev = get(index-1);
+            Node temp = prev.next;
+            prev.next = temp.next;
+            temp.next = null;
+            length--;
+            printList();
+
+        }
     }
 
     public int getBeforeLastItem() {
