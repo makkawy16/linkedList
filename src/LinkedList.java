@@ -65,15 +65,15 @@ public class LinkedList {
     }
 
     //remove first node
-    public void removeFirstNode(){
-        if(length == 0) System.out.println("list is empty");
+    public void removeFirstNode() {
+        if (length == 0) System.out.println("list is empty");
         /*else if(length == 1) {
             head = null;
             tail = null;
             length =0;
             System.out.println("list now is empty");
         }*/
-        else{
+        else {
             Node temp = head;
             head = head.next;
             temp = null;
@@ -105,10 +105,10 @@ public class LinkedList {
     }
 
     //get node by index
-    public Node get(int index){
+    public Node get(int index) {
         if (length == 0 || index < 0 || index > length) return null;
         Node temp = head;
-        for (int i =0 ; i <index;i++)
+        for (int i = 0; i < index; i++)
             temp = temp.next;
         return temp;
 
@@ -125,6 +125,32 @@ public class LinkedList {
             }
             return temp;
         }*/
+    }
+
+    //change a node value using index
+    public void set(int index, int value) {
+        Node temp = get(index);
+        if (temp != null) {
+            temp.value = value;
+            System.out.println("set success");
+            printList();
+        } else
+            System.out.println("out of range");
+    }
+
+    //insert new node using index
+    public void insert(int index, int value) {
+        if (index < 0 || index > length) System.out.println("Out Of Range");
+        else if (index == 0) prepend(value);
+        else if (index == length) append(value);
+        else {
+            Node newNode = new Node(value);
+            Node temp = get(index-1);
+            newNode.next = temp.next;
+            temp.next = newNode;
+            length++;
+        }
+        printList();
     }
 
     public int getBeforeLastItem() {

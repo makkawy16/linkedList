@@ -46,14 +46,27 @@ public class Main {
 
         linkedList.append(3);
         linkedList.append(4);
+
         linkedList.printList();
         System.out.println("node by index");
 
+        //get item using index
         try {
             System.out.println(linkedList.get(1).value);
         }catch (Exception e){
             System.out.println(e.getLocalizedMessage() );
         }
+
+        // change value of a node using index
+        linkedList.set(0,3);
+        linkedList.append(6);
+        linkedList.append(7);
+
+        System.out.println("the list : ");
+        linkedList.printList();
+
+        System.out.println("insert new node");
+        linkedList.insert(3,8);
 
     }
 }
